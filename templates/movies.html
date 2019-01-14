@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+  <div class='panel'>
+    <h1>{{ category }}</h1>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li> <strong> {{ message }} </strong> </li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <a href='{{ url_for('newItem', category = category) }}'>Create New Item</a>
+    </br>
+    </br>
+    <h2>Movies</h2>
+    {% for i in items %}
+    <p>{{i.title}}</p>
+    <p>{{i.director}}</p>
+    <a href='{{ url_for('editItem', category = category, movie_id = i.id) }}'>Edit</a>
+    </br>
+    <a href='{{ url_for('deleteItem', category = category, movie_id = i.id) }}'>Delete</a>
+    </br>
+    </br>
+    {% endfor %}
+        <a href='{{ url_for('newItem', category = category) }}'>Create New Item</a>
+      </br>
+        <a href="/">Return to Main Menu</a>
+  </div>
+</body>
+</html>

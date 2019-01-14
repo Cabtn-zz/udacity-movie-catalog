@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+  </head>
+  <body>
+    <h1> Movies by Category </h1>
+    <div>
+      <ul>
+        <a href='/category/action/'> Action </a>
+      </ul>
+      <ul>
+          <a href='/category/fantasy/'> Fantasy </a>
+      </ul>
+      <ul>
+          <a href='/category/romance/'> Romance </a>
+      </ul>
+      <ul>
+          <a href='/category/horror/'> Horror </a>
+      </ul>
+      <ul>
+          <a href='/category/comedy/'> Comedy </a>
+      </ul>
+    </div>
+    {% if 'email' not in session %}
+      <div class = "block-top">
+        <a class="ribbon button" href = "/login">Login</a>
+      </div>
+   {% else %}
+      <div class = "block-top">
+        <a class="ribbon button" href = "/login">Logout</a>
+      </div>
+   {% endif %}
+  </body>
+</html>
