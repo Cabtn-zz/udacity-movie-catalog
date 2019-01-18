@@ -32,7 +32,8 @@ class Movie(Base):
     title = Column(String(250), nullable=False)
     director = Column(String(250), nullable=False)
     category = relationship(Category)
-    category_name = Column(String, ForeignKey('category.name'))
+    category_name = Column(String(250))
+    cateogory_id = Column(Integer, ForeignKey('category.id'))
     email = Column(String(250), nullable=False)
 
 
